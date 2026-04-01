@@ -1,0 +1,333 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #111;
+}
+
+.container {
+  max-width: none;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.banner {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgb(255, 255, 255);
+}
+
+
+.header {
+  position: sticky;
+  top: 22px;
+  z-index: 1000; /* 👈 this is the key fix */
+
+  background-color: #e5e5e5;
+  padding: 20px;
+  text-align: left;
+
+  display: flex;
+  justify-content: space-between; /* pushes title left, links right */
+  align-items: center; /* vertically aligns nicely */
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px; /* space between links */
+  padding-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+} 
+
+#hero {
+  display: flex; 
+  height: 80vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  color: white; /* much better contrast */
+  background-color: #242424;
+}
+
+#hero h1 {
+  font-size: 3.3rem; /* try 3.5–6rem depending on how big you want */
+  line-height: 1.1;
+}
+
+#hero h2 {
+  font-size: 1.5rem;
+}
+
+
+
+.CTA-btn {
+  padding: 12px 20px;
+  text-decoration: none;
+  background: rgb(188, 126, 255);
+  color: white;
+  border: none;
+}
+
+
+#about-us {
+  height: 60vh;
+  display: flex;
+  gap: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#about-us .container:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#about-us img {
+  max-width: 100%;
+  height: auto;   /* THIS preserves aspect ratio */
+  display: block;
+}
+
+#about-us .container {
+  flex: 1;        /* makes them sit side by side */
+  margin: 0;      /* override margin: auto */
+}
+
+footer {
+  background: #242424;
+  color: #eeeeee;
+  display: flex;           /* makes child divs sit horizontally */
+  justify-content: space-between; /* pushes them to opposite ends */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#footer-left, #footer-right {
+  flex: 1;          /* both divs take up equal horizontal space */
+}
+
+#footer-left {
+ text-align: left;
+}
+
+#footer-right {
+  text-align: right;
+}
+
+
+#FAQ {
+  height: 80vh;
+}
+
+
+#contact-us {
+  height: 60vh;
+}
+
+#contact-form {
+  height: fit-content;
+  margin-bottom: 60px;
+}
+
+#gallery-home {
+  display: flex;
+  gap: 20px;
+  padding: 30px 20px 60px;
+  overflow-x: auto;        /* enables horizontal scroll */
+  scroll-snap-type: x mandatory; /* optional: smooth snapping */
+}
+
+.placeholder-image {
+  flex: 0 0 auto;          /* prevents shrinking */
+  width: 300px;            /* adjust as needed */
+  scroll-snap-align: start; /* optional */
+}
+
+.gallery-home-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  #gallery-home {
+      grid-template-columns: 1fr;
+  }
+}
+
+#gallery-text {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.placeholder-image {
+    flex: 1;
+    aspect-ratio: 16 / 9;
+}
+
+.placeholder-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#book {
+  height: 80vh;
+}
+
+.services-preview {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.service-card {
+  padding: 20px;
+  background-color: #242424;
+  color: #d6d6d6;
+}
+
+.service-card-extra {
+  padding: 20px;
+  background-color: #353535;
+  color: #d6d6d6;
+}
+
+.section-intro {
+  margin-top: 10px;
+  color: #666;
+}
+
+.services-cta {
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  text-decoration: none;
+  background: black;
+  color: white;
+}
+
+.service-card-btn {
+  display: inline-block;
+  padding: 3px 6px;
+  text-decoration: none;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  margin-top: 8px;
+}
+
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #fff;
+  min-width: 130px;
+  width: fit-content;
+  padding: 15px;
+}
+
+.dropdown-content a {
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.service-section {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+#unique1 {
+  text-decoration: none;
+  color: rgb(188, 126, 255);
+}
+
+.contact-info {
+  color: rgb(188, 126, 255);
+  font-weight: bold;
+}
+
+#sorry {
+  height: 60vh;
+}
+
+.home-link {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.home-link:hover {
+  opacity: 0.7;
+}
+
+.unique2 {
+  text-decoration: none;
+  color: inherit;
+  color: #000000;
+}
+
+.service-hero {
+  height: 30vh;
+  color: white; /* much better contrast */
+  background-color: #242424;
+
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+.service-section {
+  padding-left: 90px;
+  padding-right: 90px;
+}
+
+.services-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.service-card-2 {
+  padding: 20px;
+  border: 2px solid #e8e8e8;
+}
+

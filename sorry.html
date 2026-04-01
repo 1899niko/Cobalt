@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic-detail</title>
+     <link rel="stylesheet" href="styles.css"> 
+    </head> 
+
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+
+<body>
+
+
+    <section class="banner">
+        <p>...</p>
+    </section>
+
+    <header class="header">
+
+        <div class="logo">
+            <h1>
+              <a href="index.html" class="home-link">Cobalt</a>
+            </h1>
+            <p>Valeting services</p>
+        </div>
+    
+        
+    </header>
+
+    <section id="sorry">
+        <div class="container">
+            <p>Website is under maintanance.</p>
+        </div>
+    </section>
+
+
+
+    <script>
+      const pageKey = encodeURIComponent(window.location.pathname);
+      const apiURL = `https://api.countapi.xyz/hit/ut_vgbVJzIgS22rhltPJW1tFYT2m5rVxFSwVtbXBW1t/${pageKey}`;
+  
+      fetch(apiURL)
+      .then(res => res.json())
+      .then(res => {
+      console.log(`Page "${pageKey}" has ${res.value} views`);
+      });
+    </script>
+
+    <footer>
+
+    <div class="container" id="footer-left">
+        <p>&copy; 2026 Cobalt Valeting</p>
+        <p>located in Ealing.</p>
+        <br>
+        <h4>Service Area:</h4>   
+        <p>Ealing, Chiswick, Brentford <br> and surrounding areas.</p>
+
+    </div>
+
+    <div class="container" id="footer-right">
+        <a href="https://wa.me/447841773409" class="contact-info" target="_blank">07841 773 409</a>
+        <br>
+        <a href="mailto:1899niko@gmail.com" class="contact" info id="unique1">1899niko@gmail.com</a>
+        <br>
+        <br>
+        <h4>Main work hours:</h4>
+        <p>Sundays CLOSED</p>
+        <p>Mondays 10am-6pm</p>
+        <p>Tuesdays 10am-6pm</p>
+        <p>Saturday 9am-noon</p>
+    </div>
+    </footer>
+
+</body>
+</html>
